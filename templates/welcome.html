@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <img src="{{ url_for('static', filename='images/sun.jpg') }}" alt="Sun Image" style="width: 200px; height: auto;">
+    <style>
+        body { font-family: Arial, 
+            sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: lightblue;}
+        a { text-decoration: none; padding: 10px 20px; background-color: #007BFF; color: white; border-radius: 5px; }
+        a:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Weather App!</h1>
+    <p1 style="font-size: small;"><p style="color: red; font-size: medium;">No New Updates</p> Check back later to see if any updates are here!</p1>
+    <p><a href="/location">Get Weather</a></p>
+</body>
+</html>

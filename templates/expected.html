@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: lightblue; }
+        button { padding: 10px 20px; margin: 5px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .container { max-width: 600px; margin: auto; padding: 20px; text-align: center; }
+        .forecast { margin-top: 20px; }
+        .forecast-item { border-bottom: 1px solid #ddd; padding: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast for {{ city }}</h1>
+        
+        {% if forecast_data %}
+            <div class="forecast">
+                {% for forecast in forecast_data %}
+                    <div class="forecast-item">
+                        <p><strong>Date:</strong> {{ forecast.date }}</p>
+                        <p><strong>Temperature:</strong> {{ forecast.temperature }}°C</p>
+                        <p><strong>Description:</strong> {{ forecast.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No forecast data available. Please check the city name or try again later.</p>
+        {% endif %}
+
+        <button><a href="/">Back to Home</a></button>
+    </div>
+</body>
+</html>
