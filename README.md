@@ -15,13 +15,14 @@ def place_bet():
 #this would add the bet value to the leaderboard class.
         
 #this is the code I changed for the html function to format the leaderboard
-<!-- Leaderboard Page --> 
+<!-- Leaderboard Page 
   <div id="leaderboard" class="page">
         <h1>Top 10 Bets</h1>
         <p>These are the top 10 highest winning bets.</p>
         <ul id="leaderboard-list"></ul>
         <button onclick="switchPage('main-menu')">Back to Main Menu</button>
   </div> #you can change any of the text to better fit your project.
+-->
 
 For the program to request data you must add a leaderboard page requst in the api.py file
 To recieve the leaderbaord add this code to the api.py file
