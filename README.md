@@ -11,7 +11,7 @@ def place_bet():<br>
     if random.choice([True, False]):<br>
         tokens += bet_amount<br>
         result = "You win!"<br>
-        leaderboard.add_winning_bet(bet_amount)<br>
+        leaderboard.add_winning_bet(bet_amount) #this line stores the bet_amount to the leaderboard<br>
 #this would add the bet value to the leaderboard class.<br>
         
 #this is the code I changed for the html function to format the leaderboard<br>
@@ -24,10 +24,11 @@ Leaderboard Page:<br>
     <button onclick="switchPage('main-menu')">Back to Main Menu</button>
 </div>
 ```
+<br>
+Request Date: For the program to request data you must add a leaderboard page in the api.py file. <br>
 
-For the program to request data you must add a leaderboard page requst in the api.py file,
-To recieve the leaderbaord add this code to the api.py file<br>
-Here's an example code that I used to test the function:<br>
+To recieve the leaderboard add this code to the api.py file<br>
+Here's an example code that I used to test the function recieve:<br>
 @app.route('/leaderboard', methods=['GET']) #This line creates a new route for the leaderboard page<br>
 def leaderboard_page():<br>
     leaderboard.add_winning_bet(50) #example call for testing<br>
