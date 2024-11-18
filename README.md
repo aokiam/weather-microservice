@@ -4,7 +4,7 @@ Also Use HTML so be formiliar with that. <br>
 
 Communication contract; I'll send the leaderboard.py file over discord<br>
 
-First create a blank class to store the leaderboard values inside, I use named the leaderboard so my code looked like: leaderboard = Leaderboard() <br>
+First create a blank class to store the leaderboard values inside, I use the name leaderboard so my code looked like: leaderboard = Leaderboard() <br>
 An example call of that the place_bet() function could use to call it would be to add a leaderboard.add_winning_bet(bet_amount) which would add whatever the winning bet is to the leaderboard. <br>
 Example call: <br>
 def place_bet():<br>
