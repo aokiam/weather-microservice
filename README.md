@@ -2,7 +2,7 @@ This Code is a for a weather site using openweathermap.org. <br>
 You'll need a API key from there to use. <br>
 Also Use HTML so be formiliar with that. <br>
 <br>
-Communication contract; I'll send the pic-generator.py file over discord<br>
+Communication contract; I'll link to this repository along with communicating changes I make over discord<br>
 <br>
 REQUESTING DATA<br>
 1. Send a GET request to the `/get_image` endpoint with the description<br>
