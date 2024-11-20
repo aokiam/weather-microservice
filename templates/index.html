@@ -28,6 +28,11 @@
                 <p>Temperature: {{ weather_data.temperature }}°F</p>
                 <p>Description: {{ weather_data.description }}</p>
                 
+                <!-- ALLY: ADDED TO DISPLAY IMAGE -->
+                {% if weather_image %}
+                    <img src="{{ weather_image }}" alt="Weather Icon" width="150" height="150">
+                {% endif %}
+                <!-- ALLY: END OF CHANGES -->
             </div>
         {% elif weather_data is none %}
             <p>No weather data available. Please check the city name.</p>

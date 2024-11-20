@@ -17,11 +17,13 @@ def get_weather(city, api_key):
         weather = {
             "city": data["name"],
             "temperature": data["main"]["temp"],
-            "description": data["weather"][0]["description"]
+            "description": data["weather"][0]["description"].lower()  # ALLY: ADDED .lower()
         }
         return weather
     else:
         return f"Error: {response.status_code} - {response.json().get('message', 'Unknown error')}"
+
+
 
 def get_forecast(city, api_key, days=3):
     forecast_url = "https://api.openweathermap.org/data/2.5/forecast"
@@ -50,10 +52,11 @@ def get_forecast(city, api_key, days=3):
                 forecast = {
                     "date": forecast_date.strftime("%A, %B %d %Y, %I:%M %p"),  # Format date and time
                     "temperature": entry["main"]["temp"],
-                    "description": entry["weather"][0]["description"]
+                    "description": entry["weather"][0]["description"].lower() #ALLY: ADDED .lower()
                 }
                 forecast_data.append(forecast)
         
         return forecast_data
     else:
         return f"Error: {response.status_code} - {response.json().get('message', 'Unknown error')}"
+    

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import weather
+import requests
 
 app = Flask(__name__)
 
@@ -21,14 +22,21 @@ def location():
 @app.route('/weather', methods=['GET', 'POST'])
 def weather_page(city=None):
     weather_data = None
+    weather_image = None # ALLY: initialized new variable
     if request.method == 'POST':
         city = request.form['city']
         weather_data = weather.get_weather(city, API_KEY)
+        #--------- ALLY: added call to the image microservice -----------
+        if isinstance(weather_data, dict):
+            response = requests.get('http://127.0.0.1:5001/get_image',
+                                    params={'description': weather_data["description"]})
+            if response.status_code == 200:
+                weather_image = response.json().get('image_url')
 
-        if isinstance(weather_data, str):
-            weather_data = None
+        
 
-    return render_template('index.html', weather_data=weather_data)
+    return render_template('index.html', weather_data=weather_data, weather_image=weather_image) # ALLY: added weather_image to the return
+
 
 @app.route('/Expect_Weather', methods=['GET', 'POST'])
 def expected_weather():
